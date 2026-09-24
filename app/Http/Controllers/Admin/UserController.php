@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -98,7 +99,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {   
         //mencegah admin menghapus akunnya sendiri
-        if (auth()->id === $user->id) {
+        if (auth::id() === $user->id) {
             return redirect()->route('admin.users.index')->with('error', 'Anda tidak dapat menghapus akun anda sendiri.');
         }
 

@@ -49,7 +49,12 @@
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                 <div class="p-5 border-b border-gray-100 flex justify-between items-center">
                     <h3 class="text-sm font-bold text-gray-800">Aktivitas Pengerjaan Kuis Terbaru</h3>
-                    <a href="{{ route('admin.modules.index') }}" class="text-xs text-amber-600 hover:underline font-bold">Kelola Modul &rarr;</a>
+                    <!-- <a href="{{ route('admin.modules.index') }}" class="text-xs text-amber-600 hover:underline font-bold">Kelola Modul &rarr;</a> -->
+                    <div class="flex justify-end">
+                        <a href="{{ route('admin.modules.index') }}" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition">
+                            Kelola Modul
+                        </a>
+                    </div>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs">

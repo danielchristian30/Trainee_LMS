@@ -4,14 +4,16 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Edit Modul Pelatihan') }}
             </h2>
-            <a href="{{ route('admin.modules.index') }}" class="text-xs font-bold text-gray-500 hover:text-gray-800">
-                &larr; Kembali ke Daftar Modul
-            </a>
         </div>
     </x-slot>
 
     <div class="py-8">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('admin.modules.index') }}" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition">
+                    kembali ke Daftar Modul
+                 </a>
+            </div>
             <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 
                 <form action="{{ route('admin.modules.update', $module->id) }}" method="POST" enctype="multipart/form-data" class="space-y-5">

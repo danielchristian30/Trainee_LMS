@@ -4,13 +4,16 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Kelola Soal: <span class="text-amber-600">{{ $quiz->title }}</span>
             </h2>
-            <a href="{{ route('admin.modules.index') }}" class="text-xs font-bold text-gray-500 hover:text-gray-800">&larr; Kembali ke Daftar Modul</a>
         </div>
     </x-slot>
 
     <div class="py-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('admin.modules.index') }}" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition">
+                    kembali ke Daftar Modul
+                 </a>
+            </div>
             @if(session('success'))
                 <div class="p-4 bg-green-100 border border-green-300 text-green-700 rounded-lg text-xs font-bold">
                     {{ session('success') }}

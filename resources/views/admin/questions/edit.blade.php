@@ -2,14 +2,18 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Edit Soal Kuis: <span class="text-amber-600">{{ $question->quiz->title }}</span>
+                Edit Soal Kuis : <span class="text-amber-600">{{ $question->quiz->title }}</span>
             </h2>
-            <a href="{{ route('admin.quizzes.questions.index', $question->quiz_id) }}" class="text-xs font-bold text-gray-500 hover:text-gray-800">&larr; Kembali ke Daftar Soal</a>
         </div>
     </x-slot>
 
     <div class="py-8">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('admin.modules.index') }}" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition">
+                    kembali ke Daftar Modul
+                 </a>
+            </div>
             <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-4">
                 <h3 class="text-sm font-bold text-gray-800 uppercase tracking-wider border-b border-gray-100 pb-2">Perbarui Soal</h3>
 

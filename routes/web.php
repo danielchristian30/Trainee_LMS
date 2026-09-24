@@ -6,10 +6,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CertificateTemplateController;
 use App\Http\Controllers\Intern\DashboardController as InternDashboardController;
 use App\Http\Controllers\Intern\ModuleController as InternModuleController;
 use App\Http\Controllers\Intern\QuizController as InternQuizController;
-use App\Http\Controllers\Admin\UserController;
 
 // Redirect Halaman Utama ke Login
 Route::get('/', function () {
@@ -47,6 +48,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit');
         Route::put('questions/{question}', [QuestionController::class, 'update'])->name('questions.update');
         Route::delete('questions/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
+
+        // kelola design certificate
+        Route::resource('certificate-templates', CertificateTemplateController::class);
     });
     
     // GROUP INTERN

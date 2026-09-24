@@ -4,15 +4,16 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Kelola Modul Pelatihan') }}
             </h2>
-            <a href="{{ route('admin.modules.create') }}" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition">
-                + Tambah Modul Baru
-            </a>
         </div>
     </x-slot>
 
     <div class="py-8" x-data="{ showDeleteModal: false, deleteUrl: '' }">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('admin.modules.create') }}" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition">
+                    + Tambah Modul Baru
+                 </a>
+            </div>
             @if(session('success'))
                 <div class="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-xs font-bold">
                     {{ session('success') }}

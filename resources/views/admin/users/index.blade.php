@@ -4,16 +4,17 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Manajemen User') }}
             </h2>
-            <a href="{{ route('admin.users.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                + Tambah User
-            </a>
         </div>
     </x-slot>
 
     <!-- Inisialisasi Alpine.js state di kontainer utama: showModal dan deleteUrl -->
     <div class="py-12" x-data="{ showModal: false, deleteUrl: '' }">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('admin.users.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
+                    + Tambah User
+                </a>
+            </div>
             @if (session('success'))
                 <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
                     <p>{{ session('success') }}</p>
@@ -26,10 +27,10 @@
             @endif
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+                <div class="p-6 text-gray-900 overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead>
-                            <tr>
+                            <tr class="bg-gray-100 border-b">
                                 <th class="border-b py-4 px-6 font-semibold text-sm">Nama</th>
                                 <th class="border-b py-4 px-6 font-semibold text-sm">Email</th>
                                 <th class="border-b py-4 px-6 font-semibold text-sm">Role</th>
